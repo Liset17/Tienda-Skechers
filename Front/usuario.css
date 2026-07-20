@@ -1,0 +1,160 @@
+.inicio1 {
+    display: flex;
+    /* Distribuye el espacio sobrante entre los elementos: 
+       Menu/Logo (izquierda), y Iconos (derecha) */
+    justify-content: space-between;
+    align-items: center;    /* Asegura que los elementos estén centrados verticalmente */
+    padding: 0 15px;
+    /* Añade espacio a los lados para que los elementos no toquen los bordes */
+    height: 60px;
+    /* Define una altura mínima para la barra, si es necesario */
+
+}
+
+.inicio2 img {
+    height: 24px;
+    width: auto;
+    margin-left: 0;
+    vertical-align: middle;
+}
+
+.inicio3 img {
+    height: 24px;
+    /* Define la altura de ambos iconos */
+    width: auto;
+    /* Centra los iconos verticalmente si el contenedor inicio3 tiene altura */
+    vertical-align: middle;
+    margin-left: 10px
+}
+ 
+.unete{
+    background-color: chartreuse;
+    padding: 2px px;
+}
+
+
+
+
+
+.container{    
+    width: 80%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    background: rgb(91, 80, 80);
+    margin: 20px;
+    padding: 10px 100px;
+    flex-flow: row wrap;
+    }
+
+
+
+
+
+
+
+/*-------------------TARJETA------------------------*/
+
+  .contenido {
+    padding: auto;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  h3{
+    text-align: center;
+  }
+
+
+.admi-usser {
+    display: flex;
+    width: 200px;
+    height: 400px;
+    background: #4e4e4e;
+    border-radius: 12px;
+    border-top: 7px solid #484848;
+    background-color: rgba(240, 240, 240, 0.917);
+    text-align: left;
+    padding: 20px;
+    margin: auto;
+    line-height: 2; /* interlineado de texto */
+    box-shadow: 0 0px 10px 3px #616161;
+}
+
+.new-usser{
+    display: flex;
+    width: 250px;
+    height: 550px;
+    background: #4e4e4e;
+    border-radius: 12px;
+    border-top: 7px solid #484848;
+    background-color: rgba(240, 240, 240, 0.917);
+    text-align: left;
+    padding: 20px;
+    margin: auto;
+    line-height: 2; /* interlineado de texto */
+    box-shadow: 0 0px 10px 3px #616161;
+}
+
+.contenido .separador {
+    background: #8b8b8b;
+    width: 3px;
+    height: 300px;
+    display: flex;
+}
+
+
+    @media (max-width: 768px) {   /* A partir de este tamaño pasa a modo móvil */
+    .contenido {
+        flex-direction: column; /* Coloca los elementos uno debajo del otro */
+        justify-content: center;
+        align-items: center;
+        gap: 20px; /* menos separación para móviles */
+         height: auto;
+    }
+
+
+
+    .contenido .separador{        
+         height: 150px
+}
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------PIE-------------------*/
+
+.espacio2{
+    width: auto;
+    height: 1px;
+    margin: 20px;
+    padding: 1px;
+    background-color: rgb(0, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    background-color: rgb(39, 82, 120);
+}

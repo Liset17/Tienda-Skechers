@@ -1,0 +1,482 @@
+html,
+body {
+    background: #f9f9f9;
+    margin: 0;
+    padding-top: 90px;
+    padding: 0;
+    height: 100%;
+    /* asegura que el 100% funcione */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+/* ==========================================================
+   CONFIGURACIN DEL INICIO
+========================================================== */
+
+.fijo {
+    /* Fija el elemento a la ventana del navegador */
+    position: fixed;
+    /* Lo pega a la parte superior de la ventana */
+    top: 0;
+    /* Asegura que ocupe todo el ancho de la ventana */
+    width: 100%;
+    /* Pone el header por encima de cualquier otro contenido */
+    z-index: 1000;
+}
+
+.inicio1 {
+    display: flex;
+    /* Usamos Flexbox para alinear elementos en una fila */
+
+    /* Centra los ítems verticalmente */
+    align-items: center;
+
+    /* Espacia los ítems: Menú/Logo (Izquierda), Búsqueda (Centro), Iconos (Derecha) */
+    justify-content: space-between;
+
+    /* Alto de la barra de navegación */
+    height: 60px;
+
+    /* Fondo blanco como en el ejemplo */
+    background-color: white;
+
+    /* Agrega un poco de espacio horizontal */
+    padding: 0 15px;
+
+    /* Quitamos el borde morado */
+    border: none;
+}
+
+/* Quitamos los colores de fondo de los hijos para que se integren al fondo blanco */
+.menuu,
+.inicio2,
+.inicio3 {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+
+/* Reducir el tamaño de las imágenes del logo y los iconos */
+.inicio2 img {
+    width: auto;
+    /* Dejamos que el tamaño lo controle el CSS en lugar del HTML */
+    height: 40px;
+    /* Tamaño fijo para el logo */
+    margin-left: 130px;
+}
+
+.inicio3 img {
+    padding-right: 30px;
+    width: auto;
+    height: 24px;
+    /* Tamaño fijo para los iconos */
+    margin-left: 15px;
+    /* Espacio entre los iconos */
+}
+
+.unete {
+    width: 100%;
+    /* Fondo verde para el banner (ajusta el color) */
+    background-color: #3b913e;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 0.9em;
+    /* Asegura que no tenga bordes o estilos Grid que no necesita */
+    border: none;
+    /* Elimina cualquier regla grid-column, ya que no está en el grid */
+}
+
+
+
+
+
+
+/* ==========================================================
+   CONFIGURACIÓN Y POSICIONAMIENTO DEL BOTÓN LATERAL
+========================================================== */
+.menuu {
+    position: fixed;
+    top: 10px;
+    /* Separación del borde superior */
+    left: 10px;
+    /* Separación del borde izquierdo */
+    z-index: 1000;
+    /* Prioridad alta */
+}
+
+/* Ocultar la Flecha Predeterminada: Código Consolidado*/
+.menuu summary::-webkit-details-marker,
+.menuu summary::marker {
+    display: none;
+}
+
+
+
+
+
+
+
+
+/* -------------------
+   Estilos del Botón (summary)
+   ------------------- */
+.menuu summary {
+    display: flex;
+    flex-direction: row;
+    /* Alinea el icono y el texto horizontalmente */
+    align-items: center;
+    gap: 6px;
+    /* Separación entre el icono y el texto */
+    list-style: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.menuu summary:hover {
+    background-color: #ffffff;
+    /* Sutilmente visible al hacer hover */
+}
+
+
+
+
+
+
+
+
+/* -------------------
+   Tipografía del Boton
+------------------- */
+
+.menuu summary span.texto-menu {
+    color: gray;
+    font-size: clamp(14px, 3vw, 20px);
+}
+
+.menuu summary .material-symbols-outlined {
+    color: gray;
+    font-size: clamp(24px, 5vw, 36px);
+    /* Valores más compactos y responsivos */
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   LISTA DESPLEGABLE (SLIDE-OUT EFFECT)
+========================================================== */
+
+.menuu ul {
+    position: absolute;
+    top: 0;
+    /* El top se ajusta a 0 para que la lista deslice desde arriba,
+       y el padding superior se encargará de dejar espacio al botón. */
+    left: 0;
+
+    /* ESTADO INICIAL: OCULTO FUERA DE PANTALLA */
+    transform: translateX(-100%);
+
+    /* TAMAÑO Y DISEÑO */
+    width: 250px;
+    min-height: 100vh;
+    /* Mejora: Ocupa toda la altura de la ventana para un menú lateral */
+    padding: 20px 20px 30px 20px;
+    /* Padding superior para que el contenido no quede debajo del botón */
+
+    background: #a8f7eee0;
+    list-style: none;
+    border-radius: 0 3px 3px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+
+    /* ANIMACIÓN  */
+    transition: transform 0.4s ease-out;
+}
+
+/* ESTADO ABIERTO: Mostrar la lista con animación */
+.menuu[open] ul {
+    transform: translateX(0);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    /* Sombra para simular elevación */
+}
+
+
+
+
+/* -------------------
+   Estilos de los Enlaces
+------------------- */
+.menuu ul li {
+    list-style-type: none;
+    transition: all 0.2s;
+    /* Se elimina la lista-style-type: none; del li para que no haya conflicto si se añade más decoración */
+}
+
+.menuu ul li a {
+    color: #424242;
+    text-decoration: none;
+    display: block;
+    /* Padding consolidado: El padding inferior era mucho mayor que el resto, se ajusta para uniformidad. */
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+
+/* -------------------
+   Efectos :hover
+   Se consolida la lógica de hover en un solo bloque para .menuu ul li:hover
+------------------- */
+.menuu ul li:hover {
+    background: rgba(0, 0, 165, 0.717);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menuu ul li:hover a {
+    color: #f9f9f9;
+    /* Color del texto al hacer hover */
+}
+
+
+
+
+
+/* ==========================================================
+   ADAPTABILIDAD a DISPOSITIVOS
+========================================================== */
+@media (max-width: 600px) {
+    .menuu ul {
+        /* En dispositivos más pequeños, haz que ocupe casi todo el ancho */
+        width: 85%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   Subcripcion
+========================================================== */
+
+
+
+
+
+
+.video {
+    margin: 10px 0 30px 0;
+    /*top right bottom left*/
+    width: 100vw;
+    /* ocupa todo el ancho */
+    height: 100vh;
+    /* ocupa todo el alto */
+    border: none;
+    display: block;
+    /* Asegura que se comporte como un bloque */
+}
+
+
+.container {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+    /* ancho máximo, ajustable */
+}
+
+
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que las tarjetas salten*/
+    justify-content: center;
+    /* Centra el grupo de tarjetas */
+    gap: 40px;
+    /* Espacio uniforme entre todas las tarjetas */
+    padding: 20px;
+}
+
+
+/* ========================================================== */
+/*  Tarjeta de Zapatos*/
+/* ========================================================== */
+
+.caja {
+
+    /* CONTROL DE ANCHO RESPONSIVO */
+    flex: 0 1 280px;
+    /* Base de 280px, no crece (0), se encoge (1) */
+    min-width: 250px;
+    /* Ancho mínimo en pantallas pequeñas */
+    max-width: 350px;
+
+    /* CONTROL DE ALTURA UNIFORME */
+    min-height: 350px;
+    /* Establece una altura fija base para todas */
+    display: flex;
+    flex-direction: column;
+    /* Coloca el contenido verticalmente (Imagen arriba, texto abajo) */
+
+    /* ESTILOS DE DISEÑO */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #ffffff;
+    transition: transform 0.2s ease-in-out;
+}
+
+.caja:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* 3. Enlace de la Tarjeta */
+.enlace-caja {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    /* CRÍTICO: El enlace también es un flex container vertical */
+    flex-direction: column;
+    height: 100%;
+    /* Ocupa toda la altura del padre (.caja) */
+}
+
+
+/* ========================================================== */
+/*  Contenido */
+/* ========================================================== */
+
+/* Imagen */
+.zapato {
+    width: 90%;
+    /* La altura de la imagen será flexible, pero la caja la limita */
+    padding: 25% 5% 20% 5%;
+    object-fit: cover;
+    /* Recorta la imagen para llenar su contenedor */
+    display: block;
+}
+
+/* Descripción (Texto) */
+.descripcion {
+    margin: 18px 15px;
+    background-color: rgba(0, 31, 124, 0.888);
+    color: #ffebeb;
+    padding: 15px 10px 15px 10px;
+    border-radius: 3px;
+    text-align: center;
+    flex-shrink: 0;
+    /* No permite que el área de la descripción se encoja */
+}
+
+.descripcion:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.separador {
+    background-color: black;
+    padding: 10px;
+}
+
+footer {
+    background-color: rgb(242, 241, 241);
+    padding: 30px 60px;
+
+    border-top: 1px solid #ddd;
+    /* borde superior suave */
+    color: black;
+
+}
+
+.footer-contenedor {
+    display: flex;
+    /*comumnas de lado*/
+    justify-content: space-between;
+    /*espacio entre columnas*/
+    flex-wrap: wrap;
+    /* permite que bajen si la pantalla es pequeña */
+    padding: 20px 0;
+}
+
+.redes ul li {
+    line-height: 1.5;
+    list-style: none;
+}
+
+.redes ul li a {
+    text-decoration: none;
+    /*quitamos la raya inferior*/
+    color: inherit;
+    line-height: 1.5;
+    /*interlineado del texto*/
+    display: inline-block;
+}
+
+.redes ul li a:hover {
+    /*hace que salga una raya cuando el mause pasa encima*/
+    text-decoration: underline;
+}
+
+.espacio {
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.info ul,
+.info2 ul {
+    list-style-type: none;
+    line-height: 1.5;
+
+}
+
+.info2 ul li a:hover {
+    text-decoration: underline;
+}
+
+.pie {
+    color: black;
+    text-align: center;
+}

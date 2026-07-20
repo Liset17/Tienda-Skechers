@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="usuario.css">
+    <title>Usiario</title>
+</head>
+
+<body>
+
+
+    <!------------------------------------------------------------
+  *****************************CABECERA***************************
+-------------------------------------------------------------->
+
+      <header class="fijo">
+
+        <nav class="inicio1">
+
+            <details class="menuu">
+                <summary>
+                    <span class="material-symbols-outlined">menu</span>
+                       <span class="texto-menu"> Menu</span> 
+                      </summary>   
+                        <ul>
+                            <li><a href="https://www.skechers.es/mujer/calzado/zapatillas-de-deporte/" target="_blank"> MUJER </a></li>
+                            <li><a href="https://www.skechers.es/hombre/calzado/zapatillas-de-deporte/" target="_blank" > HOMBRE </a></li>
+                            <li><a href="https://www.skechers.es/ninos/nino/" target="_blank"> NIÑO </a></li>
+                            <li> <a href="https://www.skechers.es/ninos/nina/" target="_blank"> NIÑA </a></li>
+                            <li><a href="https://www.skechers.es/outlet/" target="_blank"> OUTLET </a></li>
+                        </ul>
+                  </details>
+
+
+          <div class="inicio2">
+            <a href="inicio.html">
+            <img src="/img/logo.png" alt="">
+        </a>
+         </div>
+
+         <div class="inicio3">
+           <img src="/img/cesta.png" width="15%" alt="Carrito de compras">
+
+            <a href="usuario.html">
+         <img src="/img/usuario.png" width="15%" alt="usuario">
+         </a>
+        </div>
+        
+        
+       
+
+</nav>
+
+
+        </nav>
+
+        <div class="unete">
+            <p class="suscripcion">Únete para tener Envío GRATIS + Gana 5 € de Descuento y Disfruta de Nuestra
+                Tecnologías de Confort Haz Click Aquí</p>
+        </div>
+
+
+    </header>
+
+
+
+<!------------------------------------------------------------
+    ********** **********   CUERPO ********* ********** 
+-------------------------------------------------------------->
+<div class="espacio"> <b></b></div>
+
+<!------------------------------------------------------------
+            FORMULARIO USUARIOS Y ADMINISTRADOR
+-------------------------------------------------------------->
+
+
+<div class="contenido">
+
+    
+    <section class="admi-usser">
+        
+        <form action="/login" method="post"> 
+        <h3>USUARIO</h3> <br>
+            <label for="login-email">Email</label><br>
+            <input type="email" id="login-email" name="email" required><br>
+             <label for="login-password">Contraseña</label><br>
+            <input type="password" id="login-password" name="password" required> <br><br>
+            <label for="login-humano">¿Eres humano?</label>
+            <input type="checkbox" id="login-humano">
+        <br>
+
+        <input type="submit" value="Iniciar sesión"> </form>
+    </section>
+    
+
+
+     <!------------------------------------------------------------
+           SEPARADOR
+-------------------------------------------------------------->
+
+
+    <div class="separador"></div>
+
+
+    <!------------------------------------------------------------
+            REGISTRO DE NUEVOS USUARIOS
+-------------------------------------------------------------->
+
+
+
+
+ 
+
+    <aside class="new-usser">
+        <form action="/registro" method="post">
+               <h3>REGISTRARSE</h3>
+            <label for="reg-nombre">Nombre</label><br>
+            <input type="text" id="reg-nombre" name="nombre" required><br>
+             <label for="reg-apellidos">Apellidos</label><br>
+            <input type="text" id="reg-apellidos" name="apellidos"><br>
+            <label for="reg-email">Email</label><br>
+            <input type="email" id="reg-email" name="email" required> <br>
+            <label for="login-password">Contraseña</label><br>
+            <input type="password" id="login-password" name="password" required> <br>
+            
+            <label for="reg-fecha">Fecha de Nacimiento</label><br>
+            <input type="date" id="reg-fecha" name="fecha-nacimiento" required><br><br>
+            <label for="reg-humano">¿Eres humano?</label><br>
+            <input type="checkbox" id="reg-humano"><br>
+
+            <input type="submit" value="Registrarse">
+        </form>
+    </aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!------------------------------------------------------------
+       ************************ PIE************************
+-------------------------------------------------------------->
+<div class="espacio2"> </div>
+</div>
+<footer>
+
+    <div class="footer-contenedor"> 
+    <div class="redes">
+        
+       <ul><h4>SIGUENOS</h4>
+        <li> <img src="/img/social.png" width="20" class="espacio"> <a href="https://www.instagram.com/skechersspain/" target="_blank">Instagram</a> </li>
+        <li><img src="/img/tik.png" width="33" class="espacio"> <a href="https://www.tiktok.com/discover/skechers?lang=es" target="_blank">TikTok</a></li>
+        <li><img src="/img/twit.png" width="20" class="espacio"> <a href="https://x.com/SkechersSpain" target="_blank">Twiter</a> </li>
+        <li><img src="/img/facebook.png" width="20" class="espacio"> <a href="https://www.facebook.com/skechers.es/ " target="_blank"> Facebook</a>  </li>
+        <li><img src="/img/you.png" width="22" class="espacio"> <a href="https://www.youtube.com/skechersspain" target="_blank">YouTobe</a> </li>
+       </ul>
+    </div>
+
+
+
+    <div class="info">
+        
+        <ul><H4>USUARIOS</H4>
+            <li>Mi cuenta</li>
+            <li>Registrate</li>
+            <li>Descuentos</li>
+            <li>Promociones</li>
+        </ul>
+    </div>
+
+
+    <div class="info2">
+
+<ul><h4>COMPRAS ONLINE</H4>
+    <li>Mis compras</li>
+    <li>Gastos de envio</li>
+    <li>Devoluciones</li>
+    <li>Otros servicios</li>
+</ul>
+    </div>
+</div>
+
+<div class="pie">
+    <p>
+          © 1992-2025 Skechers S.A. Todos los derechos reservados.  
+    </p>
+
+</div>
+
+</footer>
+
+
+</body>
+
+</html>
