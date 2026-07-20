@@ -1,0 +1,33 @@
+Proyecto Tienda de Zapatillas
+
+Resumen
+
+Desarrollo una aplicación web de tienda de zapatillas con PHP, MySQL y una estructura modular orientada a servicio.
+
+Características clave
+
+- Gestión de productos: creación, listado y eliminación desde el backend.
+- Carrito de compras: controlador que administra sesiones y agrega productos al carrito.
+- Proceso de compra: confirmación de pedidos y registro de ventas con DAO.
+- Diseño modular: separa `business`, `data`, `service`, `controller` y `public`.
+- Conexión segura: clase `Conexion` para centralizar la conexión a MySQL.
+
+Impacto profesional
+
+El proyecto demuestra capacidad para entregar una solución ordenada y escalable en PHP, con énfasis en:
+
+- Arquitectura limpia y mantenible.
+- Integración de lógica de negocio con acceso a datos.
+- Experiencia práctica en proyectos de comercio electrónico.
+
+Nota técnica
+
+Para ejecutar el proyecto se requiere:
+
+- Servidor PHP con acceso a base de datos MySQL.
+- Base de datos `tienda_zapatillas`.
+- Rutas relativas correctamente configuradas desde la carpeta `Front`.
+
+Contacto
+
+Este proyecto está preparado para presentarlo en entrevistas y portfolios, con foco en claridad técnica y resultado funcional.

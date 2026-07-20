@@ -8,4 +8,4 @@ $service = new ProductoService();
 $productos = $service->listarProductos();
 
 // Enviar a la vista
-include __DIR__ . '/../views/inicio.php';
+include __DIR__ . '/../inicio.php';
