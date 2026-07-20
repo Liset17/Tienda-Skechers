@@ -82,7 +82,7 @@
     
     <section class="admi-usser">
         
-        <form action="/login" method="post"> 
+        <form action="backend/auth.php?action=login" method="post"> 
         <h3>USUARIO</h3> <br>
             <label for="login-email">Email</label><br>
             <input type="email" id="login-email" name="email" required><br>
@@ -115,7 +115,7 @@
  
 
     <aside class="new-usser">
-        <form action="/registro" method="post">
+        <form action="backend/auth.php?action=register" method="post">
                <h3>REGISTRARSE</h3>
             <label for="reg-nombre">Nombre</label><br>
             <input type="text" id="reg-nombre" name="nombre" required><br>

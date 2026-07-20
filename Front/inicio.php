@@ -7,7 +7,7 @@
     </div>
 
     <!-- Botón para carrito -->
-    <form action="../controller/CarritoController.php?action=agregar" method="post">
+    <form action="backend/cart.php?action=add" method="post">
         <input type="hidden" name="id_producto" value="<?= $p->id ?>">
         <button style="width:100%; padding:10px; cursor:pointer;">
             Añadir al carrito
